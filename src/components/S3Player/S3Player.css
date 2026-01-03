@@ -1,0 +1,46 @@
+.component-root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.video-list-wrapper {
+  margin-bottom: 20px;
+}
+
+.video-list {
+  list-style: none;
+  padding: 0;
+}
+
+.video-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 6px;
+  border: 1px solid #ddd;
+  background: #d32020;
+  cursor: pointer;
+}
+
+.video-item:hover {
+  background: #f0f0f0;
+}
+
+.video-player-wrapper {
+  margin-top: 20px;
+}
+
+.responsive-video {
+  width: 100%;
+  max-height: 480px;
+}
+
+.loading {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.error {
+  color: red;
+}
