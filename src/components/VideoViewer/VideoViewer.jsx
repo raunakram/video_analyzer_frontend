@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './VideoViewer.css'
 import TrailerChat from '../TrailerChat/TrailerChat'
+import apiRoutes  from "../../apiRoute"
+
 
 function extractYouTubeId(url) {
   if (!url) return null
@@ -60,7 +62,9 @@ export default function VideoViewer() {
         </div>
       )}
       {/* {id && ( */}
-        <TrailerChat wsUrl={`ws://35.175.97.228:8000/api/v1/ws/chat/session123`} />
+        <TrailerChat
+          wsUrl={`${apiRoutes.chatUrl}/session123`}
+        />
       {/* )} */}
     </div>
   )

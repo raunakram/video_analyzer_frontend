@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import TrailerChat from "../TrailerChat/TrailerChat"
 import "./S3Player.css"
+import apiRoutes  from "../../apiRoute"
 
-const API_BASE = "http://35.175.97.228:8000/api/v1"
+
 
 export default function S3Player() {
   const [videos, setVideos] = useState([])
@@ -15,7 +16,7 @@ export default function S3Player() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const res = await fetch(`${API_BASE}/list-all-s3-objects`)
+        const res = await fetch(`${apiRoutes.listS3Objects}`)
         const data = await res.json()
         setVideos(data.objects || [])
       } catch (err) {
@@ -35,7 +36,7 @@ export default function S3Player() {
 
     try {
       const res = await fetch(
-        `${API_BASE}/summarize-video/from-s3?s3_key=${encodeURIComponent(
+        `${apiRoutes.summarizeVideo}?s3_key=${encodeURIComponent(
           video.s3_key
         )}`,
         {
@@ -97,7 +98,7 @@ export default function S3Player() {
       {/* Chat */}
       {sessionId && (
         <TrailerChat
-          wsUrl={`ws://35.175.97.228:8000/api/v1/ws/chat/${sessionId}`}
+          wsUrl={`${apiRoutes.chatUrl}/${sessionId}`}
         />
       )}
     </div>
