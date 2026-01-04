@@ -49,7 +49,10 @@ export default function S3Player() {
       }
 
       const data = await res.json()
+      console.log(data,"data")
       setSessionId(data.session_id)
+      console.log(sessionId,"session id")
+
     } catch (err) {
       setError("Failed to summarize video")
     } finally {

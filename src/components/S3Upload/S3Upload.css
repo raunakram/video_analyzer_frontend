@@ -1,0 +1,9 @@
+.s3upload-root { max-width:720px; margin:0 auto; padding:1rem; text-align:center }
+.s3upload-controls { display:flex; gap:0.5rem; align-items:center; justify-content:center; margin:0.75rem 0 }
+.s3upload-controls input[type=file] { max-width:60% }
+.s3upload-controls button { padding:0.5rem 1rem }
+.s3upload-progress { height:10px; background:#eee; border-radius:6px; overflow:hidden; margin:0.75rem 0 }
+.s3upload-progress-bar { height:100%; background:linear-gradient(90deg,#4caf50,#81c784) }
+.s3upload-error { color:#b00020; margin-top:0.5rem }
+.s3upload-success { color:#0b6623; margin-top:0.5rem }
+.s3upload-note { font-size:0.85rem; color:#444; margin-top:1rem }
